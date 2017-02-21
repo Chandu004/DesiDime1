@@ -5,17 +5,17 @@
             <p id="deals_heading_title">Best Online Deals</p>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-xl-2">
-            <p>By Categories</p>
+            <p id="categories">By Categories</p>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-xl-2">
-            <p>By Merchants</p>
+            <p id="merchants">By Merchants</p>
         </div>
     </div>
 </div>    
 <div class="content row" ng-controller='dealsController'>
     <div ng-repeat='data in deals.deals.data' class="deals_container col-lg-3 col-xs-2 col-sm-3 col-xl-3">
-        <div>
-            <div class="row">
+        <div class="deals_container_wrapper">
+        <div class="row deals_top_row">
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-xl-6">
                     <span><img src="../images/likes.png"></span>
                     <span>{{data.score}}</span>
@@ -26,7 +26,6 @@
                     <span>{{data.state}}</span>
                 </div>
             </div>
-        </div>
         <div class="deal_image">
             <img ng-src="{{data.image}}">
         </div>
@@ -40,17 +39,21 @@
         </div>
         <div class="merchant_data">
             <div class="row">
-                <div class="col-lg-6 col-sm-6 col-xs-6 col-xl-6 merchant_name">
-                     <p>{{data.merchant.name}}</p>
+                <div class="col-lg-6 col-sm-6 col-xs-6 col-xl-6">
+                     <p class="merchant_name">{{data.merchant.name}}</p>
                 </div>
             <div class="col-lg-6 col-sm-6 col-xs-6 col-xl-6 get_deals">
-                 <a href="{{data.share_url}}">Get Deals</a>
+                 <a href="{{data.share_url}}">Get Deal</a>
             </div>   
            
         </div>
         <div class="user">
-            <p>{{data.user.name}}</p>
+            <p id="user_name">{{data.user.name}}</p>
         </div>
     </div>
-</div>  
+        </div>
+        
+        </div>
+    </div> 
 </div>    
+    
